@@ -49,7 +49,6 @@ const CGFloat kNavigationBarHeight = 64;
         CGRect rect = self.headerView.frame;
         rect.origin.y = point.y;
         rect.size.height = -point.y;
-        self.headerView.frame = rect;
         self.blurImageView.frame = rect;
         
         
@@ -68,6 +67,7 @@ const CGFloat kNavigationBarHeight = 64;
     }
     
     self.blurImageView.alpha = alpha;
+    self.headerView.frame = self.blurImageView.frame;
     
     NSLog(@"blurImageView.frame:%@, point.y:%@, alpha:%@", NSStringFromCGRect(self.blurImageView.frame), @(point.y), @(alpha));
 
